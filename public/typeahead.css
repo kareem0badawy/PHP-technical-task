@@ -1,0 +1,8 @@
+.typeahead {
+    width: 35rem;
+    border-radius: 6px;
+}
+
+.typeahead .dropdown-item {
+    border-radius: 6px;
+}
