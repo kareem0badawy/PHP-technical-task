@@ -16,12 +16,12 @@ class ProductRepository
         $this->product = $product;
     }
 
-    public function getAll() : object
+    public function getAll()
     {
         return $this->product->latest()->paginate(24);
     }
 
-    public function autocompleteSearch($_request) : object 
+    public function autocompleteSearch($_request) 
     {
         return Product::select("id","title as name")->where("title","LIKE","%{$_request->word}%")->paginate(20); 
     }
@@ -57,7 +57,7 @@ class ProductRepository
         return;
     }
 
-    public function update($_request,$id)
+    public function update($_request,$id) : void
     {
         $pharmacies = $_request->pharmacies;
         $price = $_request->price;
